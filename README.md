@@ -45,7 +45,7 @@ Enable Apache to start at boot: sudo systemctl enable apache2
 Check the status of Apache to ensure it’s running: sudo systemctl status apache2
 
 4. Test Apache Installation
-Access Apache by visiting: http://localhost:80 or http://127.0.0.1:80 on your browser
+Access Apache by visiting: http://54.165.94.198/ on your browser
 Apache Installation History
 1  ls
     2  cd /
@@ -57,7 +57,7 @@ Apache Installation History
     8  sudo apt install apache2
     9  sudo systemctl status apache2
    10  curl http://localhost:80
-   11  curl http://127.0.0.1:80
+   11  curl http://54.165.94.198/
    12  history
    13  clear
 
@@ -110,7 +110,7 @@ Ensure changes take effect: sudo systemctl reload apache2
 5. Testing
 Create an index.html file in your project directory:
 
-echo "<h1>This is Kenneth</h1>" > /var/www/projectlamb/index.html
+echo "<h1>This is Marychein</h1>" > /var/www/projectlamb/index.html
 
 Access the website via the browser at http://<public-ip-address>:80
 
