@@ -128,6 +128,23 @@ Move index.php to the first position:
 2. Reload Apache
 Apply the changes: sudo systemctl reload apache2
 
+1  $ sudo apt install php libapache2-mod-php php-mysql
+    2  php -v
+    3  sudo mkdir /var/www/projectlamp
+    4  sudo chown -R $USER:$USER /var/www/projectlamp
+    5  sudo vi /etc/apache2/sites-available/projectlamp.conf
+    6  sudo ls /etc/apache2/sites-available
+    7  sudo a2ensite projectlamp
+    8  sudo a2dissite 000-default
+    9  sudo apache2ctl configtest
+   10  sudo systemctl reload apache2
+   11  sudo echo 'Hello LAMP from hostname' $(TOKEN=curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600" && curl -H "X-aws-ec2-metadata-token: $TOKEN" -s http://169.254.169.254/latest/meta-data/public-hostname) 'with public IP' $(TOKEN=curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600" && curl -H "X-aws-ec2-metadata-token: $TOKEN" -s http://169.254.169.254/latest/meta-data/public-ipv4) > /var/www/projectlamp/index.html
+   12  sudo vim /etc/apache2/mods-enabled/dir.conf
+   13  sudo systemctl reload apache2
+   14  vim /var/www/projectlamp/index.php
+   15  sudo rm /var/www/projectlamp/index.php
+   16  history
+
 3. Create PHP Test Script
 Create a simple PHP script to verify the installation: echo "<?php phpinfo(); ?>" > /var/www/projectlamp/index.php
 
